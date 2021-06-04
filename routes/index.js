@@ -10,5 +10,3 @@ let routes = (app) => {
 };
 
 module.exports = routes;
-
-//cors (bezkoder.com)
