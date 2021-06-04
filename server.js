@@ -3,14 +3,14 @@ const app = express();
 const debug = require('debug')('myapp:server');
 const path = require('path');
 const multer = require('multer');
-const logger = require('morgan'); //showing requests in console
+const logger = require('morgan');
 const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const expressHandlebars = require('express-handlebars');
 const fs = require('fs');
 const cors = require("cors");
 
-//date formating and uploaded files renaming
+//date formating and files renaming
 const date = new Date();
 const uploadDate = (date.getFullYear() +
    '-' + addZero((date.getMonth()+1)) +
@@ -81,7 +81,7 @@ app.post('/', upload.single('file'), function(req, res) {
    }
 });
 
-// "cors" allows to send a list of files in JSON to client (bezkoder.com)
+// (cors) sending JSON to client
 global.__basedir = __dirname;
 
 const corsOptions = {
@@ -94,7 +94,6 @@ const initRoutes = require("./routes");
 
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
-// end "cors"
 
 //if end point is /users/, use the router.
 app.use('/users', userRouter);
