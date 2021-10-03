@@ -1,1 +1,1 @@
-# FileUploader - app based on NodeJS
+# FileUploader
