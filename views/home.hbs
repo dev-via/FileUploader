@@ -1,0 +1,45 @@
+<br><br><br><br>
+<div class="row">
+  <div class="col"></div>
+  <div class="text-center">
+    <h1 class="shadow-sm p-3 mb-5 bg-body rounded">Main page</h1>
+    <div class="text-center animate__animated animate__backInDown">
+      <p>Welcome <strong>{{username}}username</strong></p>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>
+
+<!-- Error message -->
+{{#if error_msg}}
+  <div class="alert alert-warning alert-dismissible fade show text-center" id="error-messages" role="alert">
+    {{error_msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}
+<!-- Success message -->
+{{#if success_msg}}
+  <div class="alert alert-success alert-dismissible fade show text-center" id="success-messages" role="alert">
+    {{success_msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+{{/if}}
+<br>
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <form class="form-horizontal" role="form" enctype="multipart/form-data" action="/" method="POST">
+      <div class="d-grid gap-2">
+        <p class="shadow-sm bg-body border-bottom rounded text-center">Choose a file to upload</p>
+        <input type="file" class="form-control border-0" name="file">
+        <br>
+        <button class="btn btn-info shadow rounded" type="submit" value="Submit">Send</button>
+        <br>
+        <p class="shadow-sm bg-body rounded text-center">Show all downloaded files</p>
+        <a class="btn btn-info shadow rounded" type="button" id="show-files" href="/files">Show</a>
+      </div>
+    </form>
+  </div>
+  <div class="col"></div>
+</div>

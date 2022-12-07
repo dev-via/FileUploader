@@ -1,0 +1,39 @@
+<br><br><br><br>
+<div class="row">
+  <div class="col text-center">
+    <h1 class="shadow-sm p-3 mb-5 bg-body rounded">Files</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col text-center">
+    <hr class="featurette-divider">
+    <table class="table table-hover table-bordered table-responsive table-sm">
+      <thead>
+        <tr>
+          <th scope="col">Filename</th>
+          <th scope="col">Link to download</th>
+        </tr>
+      </thead>
+      <tbody class="align-middle">
+        {{#each fileInfo}}
+        <tr>
+          <td id="filename">{{filename}}</td>
+          <td id="url"><a href="{{url}}">{{url}}</a></td>
+          <td>
+            <form action="{{filename}}" method="POST" id="delete-form">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn">
+                <span style="color: Tomato;">
+                  <i class="fa-solid fa-trash"></i>
+                </span>
+              </button>
+            </form>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="col-md-12"></div>
+  </div>
+</div>
